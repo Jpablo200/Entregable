@@ -3,7 +3,7 @@
   session_start();
 
   if (isset($_SESSION['user_id'])) {
-    header('Location: /php-login-simple-master');
+    header('Location: /Entregable');
   }
   require 'database.php';
 
@@ -17,7 +17,7 @@
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: /php-login-simple-master");
+      header("Location: /Entregable");
     } else {
       $message = 'Lo sentimos, este usuario no existe';
     }
@@ -40,7 +40,7 @@
   </head>
   
 
-<body background="./img/fondo-negro.jpg">
+<body>
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
