@@ -31,47 +31,53 @@
     <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
   </head>
-  <body background="./img/fondo-negro.jpg">
-    <?php require 'partials/header.php' ?>
-
+  <body background="./img/fondo-negro.jpg" 
+>
+<br>
+<br>
+<br>
     <div class="container">
         <div class="row">
-           
             <div class="col-sm-4">
               <div class="card" style="width: 70rem;">
                   <div class="card-body">
                   <?php if(!empty($user)): ?>
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <?php require 'partials/header.php' ?>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown" >
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
                   <div class="container">
                         <div class="row">
                           <div class="col-sm-12">
-                          <h2 align="center">REGISTRO DEL USUARIOS</h2>
-                              <form class="col-12" >
-                                  <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <div class="jumbotron">
+                                  <div class="container text-center">
+                                    <h1>Sesión iniciada</h1>
+                                    <p>MAMAGUEVOOO.</p>
                                   </div>
-                                  <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                  </div>
-                                  <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Submit</button>
-                              </form>
+                                </div>
+
+                              </div>
                           </div>
                         </div>
                       </div>
-                      <a href="logout.php">
-                        Cerrar sesión
-                      </a>
                     <?php else: ?>
+                    <?php require 'partials/header.php' ?>
                       <h1>Por favor ingresa o Regístrate</h1>
-
-                      <a href="login.php">Iniciar sesión</a> o
-                      <a href="signup.php">Regístrate</a>
+                      <a href="login.php" class="btn btn-warning">Iniciar sesión</a> 
+                      <a href="signup.php" class="btn btn-warning">Regístrate</a>
                     <?php endif; ?>
                   </div>
                 </div>

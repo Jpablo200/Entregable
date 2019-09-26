@@ -3,7 +3,7 @@
   session_start();
 
   if (isset($_SESSION['user_id'])) {
-    header('Location: /Entregable');
+    header('Location: /server/Entregable');
   }
   require 'database.php';
 
@@ -17,9 +17,9 @@
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: /Entregable");
+      header("Location: /server/Entregable");
     } else {
-      $message = 'Lo sentimos, este usuario no existe';
+      $message = '<font color="yellow">Nuevo usuario creado con éxito </font>';
     }
   }
 
@@ -40,7 +40,7 @@
   </head>
   
 
-<body>
+<body background="./img/fondo-negro.jpg">
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>

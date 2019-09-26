@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header('Location: /Entregable');
+  header('Location: /server/Entregable');
 ?>
